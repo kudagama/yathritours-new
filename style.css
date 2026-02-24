@@ -1715,15 +1715,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 576px) {
-    .main-heading { font-size: 2.5rem; }
-    .sub-heading { font-size: 1rem; }
+    .top-bar { display: none; }
+    .main-header { top: 0 !important; padding: 10px 0; }
+
+    .main-heading { font-size: 2.2rem; }
+    .sub-heading { font-size: 0.9rem; }
     
     .section-header h2 { font-size: 1.8rem; }
     .welcome-text h2 { font-size: 1.8rem; }
     .top-title { font-size: 0.8rem; }
 
-    .banner-content h2 { font-size: 2.5rem; }
-    .banner-section { height: 300px; }
+    .banner-content h2 { font-size: 2.2rem; }
+    .banner-section { height: 280px; }
 
     .masonry-grid { grid-template-columns: 1fr; }
     .grid-item.wide { grid-column: span 1; }
@@ -1734,14 +1737,17 @@ h1, h2, h3, h4, h5, h6 {
     .footer-bottom { text-align: center !important; }
 
     .journey-categories { flex-direction: column; align-items: center; }
-    .journey-main-title { font-size: 2.2rem; }
+    .journey-main-title { font-size: 2rem; }
 
-    .floating-actions { bottom: 20px; right: 20px; gap: 10px; }
-    .fab { width: 50px; height: 50px; font-size: 1.5rem; }
+    .floating-actions { bottom: 15px; right: 15px; gap: 8px; }
+    .fab { width: 45px; height: 45px; font-size: 1.3rem; }
     
-    .logo a { font-size: 1.4rem; }
-    .header-actions { gap: 8px; }
-    .icon-btn { width: 35px; height: 35px; font-size: 0.9rem; }
+    .logo a { font-size: 1.1rem; }
+    .logo small { font-size: 0.5rem; letter-spacing: 1px; }
+    .header-actions { gap: 5px; }
+    .header-actions .icon-btn:first-child { display: none; } /* Hide Home icon on mobile */
+    .icon-btn { width: 32px; height: 32px; font-size: 0.8rem; }
+    .menu-text { font-size: 0.55rem; }
 }
 
 
