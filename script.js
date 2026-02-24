@@ -79,6 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.classList.toggle('active');
         });
 
+        const closeBtn = document.querySelector('.mobile-menu-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        }
+
         // Close menu when link is clicked
         const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(link => {
