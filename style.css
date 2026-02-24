@@ -1935,8 +1935,11 @@ h6 {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        bottom: 20px;
-        gap: 20px;
+        bottom: 150px;
+        /* Moved up to avoid overlap */
+        gap: 10px;
+        width: 100%;
+        padding: 0 20px;
     }
 
     .hero-location-info {
@@ -1948,8 +1951,20 @@ h6 {
         /* Hide long description on mobile hover */
     }
 
+    .hero-controls-fixed {
+        bottom: 30px;
+        justify-content: center;
+        pointer-events: none;
+    }
+
     .hero-controls {
         align-items: center;
+        gap: 15px;
+        /* Closer together on mobile */
+        width: 100%;
+    }
+
+    .slider-arrows {
         gap: 20px;
     }
 
@@ -2105,11 +2120,18 @@ h6 {
     }
 
     .main-heading {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
     }
 
     .sub-heading {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-pagination {
+        bottom: 110px;
+        /* Above the arrows/button */
     }
 
     .section-header h2 {
