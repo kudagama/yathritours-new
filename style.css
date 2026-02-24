@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Futura:wght@300..700&display=swap');
 
 :root {
     --primary-pink: #e80b5b; /* Bright Pink/Magenta */
@@ -15,7 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
 }
 
 html, body {
@@ -30,7 +30,7 @@ body {
 
 /* Typography Variables */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Futura', sans-serif;
 }
 
 .container {
@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 3px;
     font-weight: 600;
     font-size: 0.9rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
     text-transform: uppercase;
     display: block;
     margin-bottom: 10px;
@@ -171,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo a {
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
     font-size: 1.8rem;
     color: var(--accent-yellow);
     font-weight: 600;
@@ -338,7 +338,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-heading {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Futura', sans-serif;
     color: var(--white);
     font-size: clamp(3.5rem, 7vw, 6rem); 
     line-height: 1.1;
@@ -380,7 +380,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-location-info h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 8px;
@@ -545,7 +545,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .feature-item h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
     color: var(--dark-blue);
     font-size: 1.1rem;
     font-weight: 600;
@@ -613,12 +613,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .experience-badge {
     bottom: 20px;
-    left: -150px; /* Pull further left to compensate for translateX */
+    left: -250px; /* Pull further left to compensate for translateX */
 }
 
 .reviews-badge {
     top: 180px;
-    left: -50px; /* Change from right to left to keep it visible on the screen */
+    left: -350px; /* Change from right to left to keep it visible on the screen */
     right: auto;
     animation-delay: 2s;
 }
@@ -641,7 +641,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .badge-num {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Futura', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--dark-blue);
@@ -746,7 +746,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .banner-content p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -772,7 +772,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .journey-subtitle {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Futura', sans-serif;
     font-size: 1.4rem;
     color: var(--text-dark);
 }
@@ -848,7 +848,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .journey-category h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Futura', sans-serif;
     font-size: 1.4rem;
     color: var(--dark-blue);
     line-height: 1.1;
@@ -975,7 +975,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .loc-item h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
     color: var(--dark-blue);
     font-size: 1.1rem;
     font-weight: 600;
@@ -1041,7 +1041,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--secondary-cyan);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
     font-weight: 500;
     display: inline-block;
     margin-bottom: 5px;
@@ -1133,7 +1133,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
 }
 
 .view-btn:hover {
@@ -1358,7 +1358,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .reviewer-info h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
     color: var(--dark-blue);
     font-size: 1.1rem;
     margin-bottom: 2px;
@@ -1381,7 +1381,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #04111a;
     color: #fff;
     padding: 80px 10% 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
 }
 
 /* Newsletter Top */
@@ -1391,7 +1391,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .newsletter-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Futura', sans-serif;
     font-size: 2.2rem;
     font-weight: 500;
     margin-bottom: 15px;
@@ -1430,7 +1430,7 @@ h1, h2, h3, h4, h5, h6 {
     outline: none;
     font-size: 1rem;
     color: var(--primary-pink);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
 }
 
 .input-wrapper input::placeholder {
@@ -1575,7 +1575,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     color: var(--accent-yellow);
     font-size: 1.4rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Futura', sans-serif;
 }
 
 /* Partners Bottom */
@@ -1986,7 +1986,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--dark-blue);
     margin-top: 5px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Futura', sans-serif;
     white-space: nowrap;
 }
 
@@ -2411,6 +2411,13 @@ h1, h2, h3, h4, h5, h6 {
     -ms-transform: scale(1);
     transform: scale(1);
 }
+
+
+
+
+
+
+
 
 
 
