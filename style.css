@@ -1052,93 +1052,139 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-/* Packages */
-.packages-section {
-    background-color: var(--light-bg);
+/* Packages UI Image Match */
+.packages-section.container-fluid {
+    padding: 0;
+    max-width: 100%;
 }
 
-.packages-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 40px;
-    padding-bottom: 30px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-pink) rgba(0,0,0,0.05);
-}
-
-.packages-grid::-webkit-scrollbar {
-    height: 8px;
-}
-
-.packages-grid::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.05);
-    border-radius: 10px;
-}
-
-.packages-grid::-webkit-scrollbar-thumb {
-    background: var(--primary-pink);
-    border-radius: 10px;
-}
-
-.package-card {
-    flex: 0 0 calc(50% - 20px);
-    min-width: 320px;
-    background: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    scroll-snap-align: start;
-}
-
-.package-card:hover {
-    transform: translateY(-10px);
-}
-
-.package-image {
-    height: 250px;
-    position: relative;
-}
-
-.package-image img {
+.packages-grid.full-bleed {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: #fff;
+    padding: 0;
+    margin: 0;
     width: 100%;
-    height: 100%;
+    overflow: hidden;
+    scroll-snap-type: none;
+}
+
+@media (max-width: 991px) {
+    .packages-grid.full-bleed {
+        grid-template-columns: 1fr;
+    }
+}
+
+.package-card2 {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    background: #000;
+}
+
+.pkg-img-wrap {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.pkg-img-wrap img {
+    width: 100%; height: 100%;
     object-fit: cover;
+    transition: transform 0.8s ease;
 }
 
-.package-info {
-    padding: 30px;
-    text-align: center;
+.package-card2:hover .pkg-img-wrap img {
+    transform: scale(1.05);
 }
 
-.package-info h3 {
-    font-size: 1.6rem;
-    color: var(--dark-blue);
+.pkg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,0.85) 90%);
+}
+
+.pkg-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.pkg-duration {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-family: var(--body-font);
+}
+
+.pkg-title {
+    font-size: 38px;
+    font-weight: 500;
     margin-bottom: 15px;
+    font-family: var(--title-font);
+    color: #fff !important;
 }
 
-.package-info p {
-    color: var(--text-light);
-    margin-bottom: 25px;
-    font-size: 0.95rem;
-}
-
-.view-btn {
-    padding: 12px 30px;
-    border: 2px solid var(--secondary-cyan);
-    background: transparent;
-    color: var(--secondary-cyan);
+.pkg-subtitle {
+    font-size: 14px;
     font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: 'Futura', sans-serif;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--body-font);
 }
 
-.view-btn:hover {
-    background: var(--secondary-cyan);
-    color: var(--white);
+.pkg-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff0055, #ffb539);
+}
+
+.pkg-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-bottom: 25px;
+    max-width: 90%;
+}
+
+.pkg-brand {
+    font-size: 14px;
+    color: #c9d233;
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-family: var(--body-font);
+}
+
+.pkg-view-btn {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.pkg-view-btn:hover {
+    color: #c9d233;
+}
+
+.pkg-view-btn i {
+    font-size: 12px;
 }
 
 /* Premium Offers Section */
