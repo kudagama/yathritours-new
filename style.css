@@ -1189,7 +1189,7 @@ h1, h2, h3, h4, h5, h6 {
 .premium-offers-section {
     position: relative;
     padding: 80px 0 100px;
-    background: url('https://images.unsplash.com/photo-1544735716-392fe2449fee?q=80&w=1600') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=1600') center/cover no-repeat;
 }
 
 .offers-bg-overlay {
@@ -2469,6 +2469,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Gallery Section specific overrides */
+.gallery-section {
+    position: relative;
+    padding: 80px 0 100px;
+    background: url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=1600') center/cover no-repeat;
+}
+
+.gallery-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.2) 100%);
+    z-index: 1;
+}
+
+.gallery-section > .container {
+    position: relative;
+    z-index: 2;
+}
+
 .gallery-section .swiper-pagination-bullet-active {
     background-color: var(--secondary-cyan) !important;
     border-color: var(--secondary-cyan) !important;
