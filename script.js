@@ -119,4 +119,42 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: '.hero-prev',
         },
     });
+
+    // Packages Sliders Initialization
+    const packageSliderWraps = document.querySelectorAll('.packages-slider-wrap');
+    packageSliderWraps.forEach(wrap => {
+        const slider = wrap.querySelector('.packages-slider');
+        const nextBtn = wrap.querySelector('.package-next');
+        const prevBtn = wrap.querySelector('.package-prev');
+        const pagination = wrap.querySelector('.packages-pagination');
+
+        if (slider) {
+            new Swiper(slider, {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                speed: 1000,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: nextBtn,
+                    prevEl: prevBtn,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                    }
+                }
+            });
+        }
+    });
 });

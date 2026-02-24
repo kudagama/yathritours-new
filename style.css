@@ -1238,20 +1238,83 @@ h6 {
     max-width: 100%;
 }
 
-.packages-grid.contained {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    background: transparent;
-    padding: 0;
-    margin: 0;
+/* Packages Slider Styles */
+.packages-slider-wrap {
     width: 100%;
+    padding: 0 60px;
+    /* More space for arrows */
 }
 
-@media (max-width: 991px) {
-    .packages-grid.contained {
-        grid-template-columns: 1fr;
-    }
+.packages-slider {
+    width: 100%;
+    padding-bottom: 60px !important;
+}
+
+.packages-navigation {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.packages-navigation button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1.1rem;
+}
+
+.packages-navigation button:hover {
+    background: var(--primary-pink);
+    color: var(--white);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 15px 30px rgba(232, 11, 91, 0.3);
+}
+
+.packages-pagination {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+}
+
+.packages-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: var(--dark-blue);
+    opacity: 0.15;
+    transition: all 0.4s ease;
+    border-radius: 50%;
+}
+
+.packages-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--primary-pink);
+    width: 35px;
+    border-radius: 10px;
+}
+
+.packages-grid.contained {
+    display: none;
+    /* Replaced by Swiper */
 }
 
 .package-card2 {
