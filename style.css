@@ -2350,23 +2350,62 @@ h6 {
         left: auto;
         right: auto;
         bottom: auto;
-        margin: 20px auto;
-        width: 90%;
-        max-width: 350px;
+        margin: 0;
+        width: 280px;
+        flex-shrink: 0;
         animation: none;
     }
 
     .floating-cards-wrapper {
         position: relative;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        margin-top: 40px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        /* Force single line */
+        align-items: stretch;
+        gap: 15px;
+        margin-top: 30px;
+        padding: 20px 20px 40px;
+        /* Space for scrollbar */
+        overflow-x: auto !important;
+        pointer-events: auto !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        width: 100vw;
+        /* Occupy full viewport width */
+        margin-left: -5%;
+        /* Break out of container padding */
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-pink) transparent;
+    }
+
+    /* Custom scrollbar for Webkit browsers */
+    .floating-cards-wrapper::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .floating-cards-wrapper::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+    }
+
+    .floating-cards-wrapper::-webkit-scrollbar-thumb {
+        background: var(--primary-pink);
+        border-radius: 10px;
     }
 
     .map-showcase {
         flex-direction: column;
+        min-height: auto;
+    }
+
+    .center-map {
+        max-width: 350px;
+    }
+
+    .map-marker.active {
+        opacity: 1;
+        transform: scale(1) translateY(0);
     }
 }
 

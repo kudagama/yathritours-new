@@ -97,6 +97,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Map Interaction for Mobile
+document.addEventListener('DOMContentLoaded', () => {
+    const mapCards = document.querySelectorAll('.map-loc-card');
+
+    mapCards.forEach(card => {
+        card.addEventListener('click', function () {
+            if (window.innerWidth <= 992) {
+                const category = Array.from(this.classList).find(c => c.startsWith('cat-'));
+                if (category) {
+                    const categoryClass = category.replace('cat-', '');
+
+                    // Remove active from all markers first
+                    document.querySelectorAll('.map-marker').forEach(m => m.classList.remove('active'));
+
+                    // Add active to matching markers
+                    document.querySelectorAll(`.map-marker[class*="${categoryClass}"]`).forEach(m => {
+                        m.classList.add('active');
+                    });
+
+                    // Smoothly scroll the map into view if it's partially off screen
+                    const mapSection = document.querySelector('.center-map');
+                    if (mapSection) {
+                        mapSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            }
+        });
+    });
+});
 // Hero Slider Initialization
 document.addEventListener('DOMContentLoaded', () => {
     const heroSlider = new Swiper('.hero-slider', {
