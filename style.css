@@ -445,7 +445,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Floating Actions */
 .floating-actions {
     position: fixed;
-    bottom: 30px;
+    bottom: 100px; /* Moved up to make room for scroll-top */
     right: 30px;
     z-index: 999;
     display: flex;
@@ -472,9 +472,20 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.1);
 }
 
-.chat-fab {
-    background: #128c7e; /* Darker green */
+/* Scroll Top Customization */
+.scroll-top {
+    border-radius: 50% !important;
 }
+
+.scroll-top::after {
+    color: var(--secondary-cyan) !important;
+    border: 2px solid var(--secondary-cyan) !important;
+}
+
+.scroll-top .progress-circle path {
+    stroke: var(--secondary-cyan) !important;
+}
+
 
 /* Welcome Section */
 .welcome-section {
