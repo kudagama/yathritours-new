@@ -89,3 +89,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Hero Slider Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    const heroSlider = new Swiper('.hero-slider', {
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 1500,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.hero-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.hero-next',
+            prevEl: '.hero-prev',
+        },
+    });
+});
