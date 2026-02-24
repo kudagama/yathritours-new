@@ -1187,156 +1187,158 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 12px;
 }
 
-/* Premium Offers Section */
+/* New Special Offers Section */
 .premium-offers-section {
-    padding: 100px 0;
-    background-color: var(--light-bg);
-}
-
-.premium-offers-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.premium-offer-card {
-    background: var(--white);
-    border-radius: 25px;
-    overflow: hidden;
     position: relative;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(0,0,0,0.02);
+    padding: 80px 0 100px;
+    background: url('https://images.unsplash.com/photo-1544735716-392fe2449fee?q=80&w=1600') center/cover no-repeat;
 }
 
-.premium-offer-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 30px 60px rgba(232, 11, 91, 0.1);
+.offers-bg-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.2) 100%);
+    z-index: 1;
 }
 
-.offer-img-box {
+.z-index-2 {
     position: relative;
-    height: 250px;
-    overflow: hidden;
-}
-
-.offer-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s;
-}
-
-.premium-offer-card:hover .offer-img-box img {
-    transform: scale(1.1);
-}
-
-.offer-overlay {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-}
-
-.premium-discount-badge {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    color: var(--primary-pink);
-    padding: 8px 15px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     z-index: 2;
 }
 
-.premium-discount-badge.highlight {
-    background: var(--primary-pink);
-    color: var(--white);
-    box-shadow: 0 4px 15px rgba(232, 11, 91, 0.4);
-}
-
-.offer-content {
-    padding: 30px;
-}
-
-.offer-meta {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
-    font-size: 0.85rem;
-    color: var(--secondary-cyan);
-    font-weight: 600;
-}
-
-.offer-meta i {
-    margin-right: 5px;
-}
-
-.offer-content h3 {
-    font-size: 1.5rem;
-    color: var(--dark-blue);
-    margin-bottom: 10px;
-}
-
-.offer-content p {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    margin-bottom: 25px;
-    min-height: 45px;
-}
-
-.offer-bottom {
-    display: flex;
-    justify-content: space-between;
+.view-all-offers-btn {
+    display: inline-flex;
     align-items: center;
-    border-top: 1px solid rgba(0,0,0,0.05);
-    padding-top: 20px;
+    gap: 5px;
+    font-family: var(--body-font);
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
-.price-container {
+.view-all-offers-btn:hover {
+    color: var(--secondary-cyan) !important;
+}
+
+.special-offers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (max-width: 991px) {
+    .special-offers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sp-offer-card {
+    background: #fff;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
     display: flex;
     flex-direction: column;
 }
 
-.old-price {
-    text-decoration: line-through;
-    color: #a0a0a0;
-    font-size: 0.9rem;
+.sp-offer-card:hover {
+    transform: translateY(-10px);
 }
 
-.new-price {
-    color: var(--primary-pink);
-    font-size: 1.6rem;
-    font-weight: 700;
+.sp-img-box {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
 }
 
-.premium-book-btn {
-    padding: 12px 25px;
-    background: transparent;
-    border: 2px solid var(--primary-pink);
-    color: var(--primary-pink);
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s;
+.sp-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.sp-offer-card:hover .sp-img-box img {
+    transform: scale(1.05);
+}
+
+.sp-img-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    z-index: 1;
+}
+
+.sp-save-tag {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--body-font);
+    z-index: 2;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.premium-book-btn:hover {
-    background: var(--primary-pink);
-    color: var(--white);
-    gap: 12px;
+.sp-save-tag i {
+    color: #c9d233;
 }
 
-.premium-book-btn.highlight {
-    background: var(--primary-pink);
-    color: var(--white);
+.sp-content-box {
+    padding: 40px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.sp-title {
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+    font-family: var(--title-font);
+}
+
+.sp-price-start {
+    font-size: 14px;
+    font-weight: 600;
+    color: #c9d233;
+    margin-bottom: 25px;
+    font-family: var(--body-font);
+}
+
+.sp-desc {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-family: var(--body-font);
+    flex-grow: 1;
+}
+
+.sp-enquire-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #c9d233;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: var(--body-font);
+    transition: color 0.3s ease;
+}
+
+.sp-enquire-btn:hover {
+    color: var(--secondary-cyan);
 }
 
 .premium-book-btn.highlight:hover {
@@ -1604,6 +1606,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center !important;
     width: 100% !important;
     height: 100% !important;
+    color: #ffffff !important;
 }
 
 .social-icons a:hover {
