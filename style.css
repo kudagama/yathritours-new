@@ -257,6 +257,17 @@ h1, h2, h3, h4, h5, h6 {
     width: 25px;
     height: 2px;
     background-color: var(--accent-yellow);
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
 }
 
 .menu-text {
@@ -468,6 +479,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Welcome Section */
 .welcome-section {
     background-color: var(--white);
+    overflow: hidden;
 }
 
 .welcome-flex {
@@ -1588,16 +1600,110 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Responsive */
 @media (max-width: 992px) {
-    .container { padding: 60px 5%; }
-    .hero-title { font-size: 3rem; }
-    .welcome-flex { flex-direction: column; }
+    .container { padding: 60px 4%; }
+    
+    .top-bar-inner {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .top-contacts .divider { display: none; }
+    .top-contacts { flex-direction: column; gap: 5px; text-align: center; }
+    .video-chat-btn { display: none; } /* Hide on mobile for space */
+
+    .main-header { top: 35px; } /* Slightly closer to top bar */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--dark-blue);
+        z-index: 1001;
+        transition: 0.5s ease;
+        padding: 100px 40px;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+    }
+
+    .nav-menu.active { right: 0; }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    .nav-menu ul li a {
+        font-size: 1.2rem;
+        color: var(--white);
+    }
+
+    .hero-title { font-size: 2.8rem; }
+    
+    .hero-bottom-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        bottom: 20px;
+        gap: 20px;
+    }
+
+    .hero-location-info {
+        max-width: 100%;
+    }
+
+    .hero-location-info p {
+        display: none; /* Hide long description on mobile hover */
+    }
+
+    .hero-controls {
+        align-items: center;
+        gap: 20px;
+    }
+
+    .welcome-flex { flex-direction: column; gap: 60px; }
+    .welcome-text { text-align: center; }
+    .welcome-image-container {
+        width: 100%;
+        height: 400px;
+        transform: none;
+        margin-top: 50px;
+    }
+
+    .welcome-image img {
+        height: 100%;
+        position: relative;
+        top: 0; bottom: 0; right: 0;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .welcome-text p { font-size: 1rem; margin-bottom: 25px; line-height: 1.6; }
+
+    .decor-circle {
+        width: 250px;
+        height: 250px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        right: auto;
+    }
+
+    .welcome-text h2 { font-size: 2.2rem; margin-bottom: 20px; }
+    .features-grid { grid-template-columns: 1fr; gap: 20px; text-align: left; max-width: 400px; margin: 0 auto; }
+
+    .experience-badge { left: 5%; bottom: -10px; scale: 0.8; }
+    .reviews-badge { left: auto; right: 5%; top: -20px; scale: 0.8; }
+
     .map-container { flex-direction: column; }
     .masonry-grid { grid-template-columns: repeat(2, 1fr); }
+    .packages-grid { padding: 0 15px 20px; } /* Mobile grid horizontal scroll already handled */
     .premium-offers-grid { grid-template-columns: repeat(2, 1fr); }
     .testimonial-wrapper { grid-template-columns: 1fr; }
     .footer-container { grid-template-columns: repeat(2, 1fr); }
     .footer-connected { flex-direction: column; gap: 30px; text-align: center; }
     .footer-logo { text-align: center; }
+    
     .search-box { flex-direction: column; gap: 10px; }
     .input-divider { width: 100%; height: 1px; }
     .search-container { border-radius: 20px; }
@@ -1609,12 +1715,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 576px) {
+    .main-heading { font-size: 2.5rem; }
+    .sub-heading { font-size: 1rem; }
+    
+    .section-header h2 { font-size: 1.8rem; }
+    .welcome-text h2 { font-size: 1.8rem; }
+    .top-title { font-size: 0.8rem; }
+
+    .banner-content h2 { font-size: 2.5rem; }
+    .banner-section { height: 300px; }
+
     .masonry-grid { grid-template-columns: 1fr; }
     .grid-item.wide { grid-column: span 1; }
     .premium-offers-grid { grid-template-columns: 1fr; }
     .footer-container { grid-template-columns: 1fr; }
+    
+    .social-icons { justify-content: center !important; margin-top: 10px; }
+    .footer-bottom { text-align: center !important; }
+
     .journey-categories { flex-direction: column; align-items: center; }
+    .journey-main-title { font-size: 2.2rem; }
+
+    .floating-actions { bottom: 20px; right: 20px; gap: 10px; }
+    .fab { width: 50px; height: 50px; font-size: 1.5rem; }
+    
+    .logo a { font-size: 1.4rem; }
+    .header-actions { gap: 8px; }
+    .icon-btn { width: 35px; height: 35px; font-size: 0.9rem; }
 }
+
 
 /* Fix for Destination Background Slider */
 #destinationSlide12 .swiper-slide,
