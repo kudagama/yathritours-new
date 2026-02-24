@@ -1317,6 +1317,16 @@ h6 {
     /* Replaced by Swiper */
 }
 
+@media (max-width: 767px) {
+    .packages-slider-wrap {
+        padding: 0 15px;
+    }
+
+    .packages-navigation {
+        display: none;
+    }
+}
+
 .package-card2 {
     position: relative;
     width: 100%;
