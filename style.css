@@ -2412,12 +2412,23 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1);
 }
 
+/* Gallery Section Theme Colors */
+.gallery-section .theme-sub-title {
+    color: var(--secondary-cyan) !important;
+}
 
+.gallery-section .theme-sec-title {
+    color: var(--dark-blue) !important;
+}
 
+.gallery-section .swiper-pagination-bullet-active {
+    background-color: var(--secondary-cyan) !important;
+    border-color: var(--secondary-cyan) !important;
+}
 
-
-
-
+.gallery-section .icon-btn:hover {
+    color: var(--secondary-cyan) !important;
+}
 
 
 
