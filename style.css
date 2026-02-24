@@ -1570,9 +1570,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Partners Bottom */
 .footer-partners {
     padding: 30px 0;
-    display: flex;
-    justify-content: center;
+    display: block;
 }
+
 
 .partner-logos {
     display: flex;
@@ -1595,7 +1595,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-bottom {
-    text-align: left;
+    text-align: center;
     padding-top: 15px;
     font-size: 0.75rem;
     color: rgba(255,255,255,0.4);
@@ -2104,6 +2104,39 @@ h1, h2, h3, h4, h5, h6 {
 .brandSlider1 {
     padding: 0;
 }
+
+.footer-brand-slider .brand-box {
+    width: auto;
+    height: 80px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-brand-slider .brand-box:hover {
+    opacity: 1;
+}
+
+.footer-brand-slider .brand-box img {
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+}
+
+.footer-brand-slider .brand-box img.original {
+    display: none;
+}
+
+.footer-brand-slider .brand-box img.gray {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
 
 /* Testimonial Section 9 */
 .testiSlider9 {
