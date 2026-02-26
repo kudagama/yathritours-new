@@ -106,7 +106,41 @@
             font-size: 3rem;
             color: var(--dark-blue);
             font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-intro h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-intro .sub-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--primary-pink);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-intro .sub-title i {
+            font-size: 8px;
+        }
+
+        .section-intro p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         /* Destination Grid Pagination */
@@ -174,8 +208,27 @@
                 font-size: 3rem;
             }
 
+            .section-intro {
+                margin-bottom: 40px;
+                padding: 0 15px;
+            }
+
             .section-intro h2 {
-                font-size: 2.2rem;
+                font-size: 2.22rem;
+            }
+
+            .section-intro h3 {
+                font-size: 1.4rem;
+            }
+
+            .section-intro .sub-title {
+                font-size: 0.85rem;
+                letter-spacing: 1.5px;
+            }
+
+            .section-intro p {
+                font-size: 0.95rem;
+                line-height: 1.7;
             }
         }
     </style>
@@ -207,7 +260,7 @@
                 <div class="mobile-menu-close"><i class="fas fa-times"></i></div>
                 <ul>
                     <li><a href="index.html">HOME</a></li>
-                    <li><a href="about.html">ABOUT US +</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
                     <li><a href="destination.html" class="active">DESTINATIONS</a></li>
                     <li><a href="tours.html">TOURS</a></li>
                     <li><a href="contact.html">CONTACT US</a></li>
@@ -242,8 +295,11 @@
         <div class="header-container">
             <div class="section-intro">
                 <span class="sub-title"><i class="fas fa-circle"></i> Active travel could change your life</span>
-                <h2 style="font-family: 'Montserrat', sans-serif;">Diverse Destinations</h2>
-                <h3 style="font-family: 'Montserrat', sans-serif;">Your "Must-See" Places</h3>
+                <div class="heading-wrap">
+                    <h2>Diverse Destinations</h2>
+                    <div class="heading-divider" style="margin: 15px auto 25px;"></div>
+                </div>
+                <h3>Your "Must-See" Places</h3>
                 <p>With so many places to visit, Sri Lanka is a bit of paradise full of surprising proximity. You can
                     swap the bustle of a city for a tranquil beach in an hour or two, or switch from tropical heat to
                     cool heights and cloud forests in a few lines. There are mountains to climb, waves to surf, history

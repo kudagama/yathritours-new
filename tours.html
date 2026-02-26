@@ -85,32 +85,45 @@
         }
 
         .filter-subtitle {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
             color: var(--primary-pink);
-            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 10px;
-            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .filter-subtitle::before {
+            content: '\f111';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 8px;
         }
 
         .filter-title {
             font-size: 3rem;
-            font-weight: 500;
+            font-weight: 700;
             margin-bottom: 10px;
             color: var(--dark-blue);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .filter-desc {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            color: #444;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .filter-paragraph {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto 50px;
-            font-size: 0.9rem;
-            color: #777;
+            font-size: 1.05rem;
+            color: #555;
             line-height: 1.8;
         }
 
@@ -324,11 +337,36 @@
             font-weight: 600;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .tour-hero h1 {
                 font-size: 3rem;
             }
 
+            .tour-filters {
+                padding: 40px 15px;
+            }
+
+            .filter-title {
+                font-size: 2.22rem;
+            }
+
+            .filter-desc {
+                font-size: 1.4rem;
+            }
+
+            .filter-subtitle {
+                font-size: 0.85rem;
+                letter-spacing: 1.5px;
+            }
+
+            .filter-paragraph {
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
             .filter-title {
                 font-size: 2rem;
             }
@@ -399,7 +437,10 @@
         <div class="container">
 
             <span class="filter-subtitle">Customize your vacation with us</span>
-            <h2 class="filter-title">Find your journey</h2>
+            <div class="heading-wrap">
+                <h2 class="filter-title">Find your journey</h2>
+                <div class="heading-divider" style="margin: 15px auto 25px;"></div>
+            </div>
             <h3 class="filter-desc">Adventure Meets Luxury in Every Destination</h3>
             <p class="filter-paragraph">
                 Yathri Tours offers solid adventure, romantic escapes, and fine local touch with expert guides. Whether
