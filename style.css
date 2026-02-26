@@ -3311,130 +3311,170 @@ h6 {
     background: var(--white);
 }
 
-/* Form Styles */
+/* Form Styles - Premium Upgrade */
+.contact-form-side {
+    padding: 60px;
+    background: #ffffff;
+    position: relative;
+}
+
+.custom-contact-form .row {
+    --bs-gutter-y: 2rem;
+}
+
 .form-group-custom {
-    margin-bottom: 5px;
+    position: relative;
+    margin-bottom: 0px;
 }
 
 .form-group-custom label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
     color: var(--dark-blue);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    opacity: 0.8;
 }
 
 .bg-input {
-    background-color: #f8fcfd !important;
+    background-color: #f9fbff !important;
+    border: 1px solid #eef3fb !important;
+    border-radius: 12px !important;
     padding: 16px 20px !important;
-    border-radius: 8px;
-    border: 1px solid #eef2f5 !important;
+    padding-right: 50px !important;
+    /* Make room for icons on the right */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.01) !important;
     height: auto !important;
-    line-height: normal !important;
 }
 
 .custom-input {
     width: 100%;
-    border: none;
-    font-size: 1rem;
-    color: var(--text-dark);
-    transition: all 0.3s ease;
+    color: var(--dark-blue);
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+}
+
+.custom-input::placeholder {
+    color: #a0aec0;
+    font-weight: 400;
 }
 
 .custom-input:focus {
-    outline: none;
-    border-color: rgba(232, 11, 91, 0.4) !important;
-    background-color: var(--white) !important;
-    box-shadow: 0 5px 15px rgba(232, 11, 91, 0.08) !important;
+    outline: none !important;
 }
 
+.form-group-custom:focus-within .bg-input {
+    background-color: #ffffff !important;
+    border-color: var(--primary-pink) !important;
+    box-shadow: 0 10px 25px rgba(232, 11, 91, 0.08) !important;
+    transform: translateY(-2px);
+}
+
+.form-group-custom i.field-icon {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    color: #cbd5e0;
+    font-size: 1rem;
+    transition: color 0.3s;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.form-group-custom:focus-within i.field-icon {
+    color: var(--primary-pink);
+}
+
+/* Specific Field Overrides */
 select.custom-input {
-    appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="%23333" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 15px center;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    padding-right: 50px !important;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23cbd5e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>') !important;
+    background-repeat: no-repeat !important;
+    background-position: right 45px center !important;
+    background-size: 12px !important;
 }
 
-.phone-input-wrap {
+select.custom-input:focus {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23e80b5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>') !important;
+}
+
+textarea.bg-input {
+    min-height: 150px;
+    resize: none;
+}
+
+.phone-input-wrap.bg-input {
     display: flex;
     align-items: center;
-    gap: 15px;
+    padding: 0 20px !important;
+    padding-right: 50px !important;
+}
+
+.phone-input-wrap .flag-select {
+    padding-right: 15px;
+    border-right: 2px solid #eef3fb;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    height: 52px;
 }
 
 .phone-input-wrap .custom-input {
-    border: none !important;
-    padding: 0 !important;
-    background: transparent !important;
+    padding: 14px 0 !important;
 }
 
-.phone-input-wrap .custom-input:focus {
-    box-shadow: none !important;
-}
-
-.phone-input-wrap:focus-within {
-    border-color: rgba(232, 11, 91, 0.4) !important;
-    background-color: var(--white) !important;
-    box-shadow: 0 5px 15px rgba(232, 11, 91, 0.08) !important;
-}
-
-.flag-select {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    color: #666;
-    padding-right: 15px;
-    border-right: 1px solid #ddd;
-}
-
-.flag-select img {
-    border: 1px solid #eee;
-    width: 24px;
-    border-radius: 2px;
-}
-
+/* Checkbox Styling */
 .privacy-check {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 10px 0;
+    background: #f9fbff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    border: 1px dashed #e2e8f0;
+    margin-top: 10px;
 }
 
 .privacy-check input {
-    width: 20px;
-    height: 20px;
-    accent-color: var(--primary-pink);
+    width: 18px;
+    height: 18px;
     cursor: pointer;
 }
 
 .privacy-check label {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    cursor: pointer;
+    font-size: 0.85rem;
+    color: #718096;
+    margin: 0;
 }
 
+.privacy-check label strong {
+    color: var(--primary-pink);
+}
+
+/* Submit Button - Enhanced */
 .custom-submit-btn {
-    background-color: var(--primary-pink);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--primary-pink) 0%, #c10045 100%);
+    color: #fff;
+    padding: 18px 50px;
+    border-radius: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
     border: none;
-    padding: 16px 45px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(232, 11, 91, 0.2);
+    box-shadow: 0 15px 35px rgba(232, 11, 91, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.hover-grow:hover {
-    background-color: var(--dark-blue);
+.custom-submit-btn:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 25px rgba(11, 29, 46, 0.3);
+    box-shadow: 0 20px 45px rgba(232, 11, 91, 0.4);
+    background: var(--dark-blue);
 }
 
 /* Branch Styling */
@@ -3591,6 +3631,11 @@ select.custom-input {
     color: var(--dark-blue);
 }
 
+/* Hero Section Centering */
+.contact-page .hero-bottom-content {
+    justify-content: center !important;
+}
+
 .breadcrumb-item a {
     color: var(--secondary-cyan);
     text-decoration: none;
@@ -3629,16 +3674,51 @@ select.custom-input {
 }
 
 @media (max-width: 768px) {
-    .contact-page .main-heading {
-        font-size: 2.2rem;
+    .contact-page .page-hero {
+        height: 50vh;
+        min-height: 400px;
     }
 
-    .contact-page .sub-heading {
-        font-size: 1rem;
+    .contact-page .hero-bottom-content {
+        position: relative;
+        bottom: auto;
+        margin-top: 30px;
+    }
+
+    .contact-page .hero-center-content {
+        margin-top: 80px;
+        padding: 0 15px;
+        width: 100%;
+    }
+
+    .contact-page .sub-heading,
+    .about-page .sub-heading {
+        font-size: 0.85rem !important;
+        margin-bottom: 10px;
+    }
+
+    .contact-page .main-heading,
+    .about-page .main-heading {
+        font-size: 2rem !important;
+        line-height: 1.2;
+        margin-bottom: 5px;
+    }
+
+    .custom-contact-form .row {
+        --bs-gutter-y: 1.25rem !important;
+    }
+
+    .contact-form-side .mb-5 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .contact-page .spacer-y {
+        padding-top: 40px !important;
+        padding-bottom: 60px !important;
     }
 
     .contact-card-premium {
-        margin-top: 10px;
+        margin-top: 0;
     }
 
     .contact-form-side {
