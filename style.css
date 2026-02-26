@@ -3804,3 +3804,35 @@ textarea.bg-input {
         font-size: 2rem !important;
     }
 }
+
+/* Hero Tours Button */
+.hero-tour-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: var(--primary-pink);
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    border-radius: 50px;
+    margin-top: 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--primary-pink);
+    text-transform: uppercase;
+}
+
+.hero-tour-btn:hover {
+    background-color: transparent;
+    color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(223, 22, 135, 0.3);
+}
+
+@media (max-width: 768px) {
+    .hero-tour-btn {
+        padding: 10px 25px;
+        font-size: 0.85rem;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours | Yathri Tours</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Template Styles -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/destination-slider.css">
+
+    <style>
+        :root {
+            --primary-gold: #c9d233;
+            --primary-pink: #df1687;
+            --dark-blue: #0b2c3d;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-blue);
+        }
+
+        /* Hero Section */
+        .tour-hero {
+            height: 70vh;
+            min-height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .tour-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .tour-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tour-hero h1 {
+            font-size: 4.5rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .tour-hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Filter Section */
+        .tour-filters {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .filter-subtitle {
+            color: var(--primary-pink);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .filter-title {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+        }
+
+        .filter-desc {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #444;
+        }
+
+        .filter-paragraph {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            font-size: 0.9rem;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 250px;
+            font-size: 0.9rem;
+            background-color: white;
+            color: #333;
+        }
+
+        /* Tour Grid */
+        .tour-grid {
+            padding-bottom: 80px;
+        }
+
+        .tour-card-custom {
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            height: 100%;
+            border: 1px solid #eee;
+        }
+
+        .tour-card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        .tour-img-wrap {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .tour-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tour-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: white;
+            color: var(--primary-pink);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tour-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--primary-pink);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .tour-content-custom {
+            padding: 25px;
+        }
+
+        .tour-title-custom {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+
+        .tour-desc-custom {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .tour-learn-more {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tour-learn-more:hover {
+            color: var(--dark-blue);
+        }
+
+        /* Pagination */
+        .pagination-custom {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 60px;
+            align-items: center;
+        }
+
+        .page-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #8fa038;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .page-btn:hover {
+            background: var(--dark-blue);
+        }
+
+        .page-btn.prev-btn,
+        .page-btn.next-btn {
+            background: #8fa038;
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            background: #000;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .news-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .news-subtitle {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .news-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        .news-input {
+            background: transparent;
+            border: none;
+            color: white;
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+
+        .news-input:focus {
+            outline: none;
+        }
+
+        .news-submit {
+            background: transparent;
+            border: none;
+            color: var(--primary-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+
+        /* Breadcrumb Style From Image */
+        .breadcrumb-small {
+            font-size: 0.7rem;
+            color: #aaa;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .breadcrumb-small span {
+            color: var(--primary-pink);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .tour-hero h1 {
+                font-size: 3rem;
+            }
+
+            .filter-title {
+                font-size: 2rem;
+            }
+
+            .filter-desc {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="header-container">
+            <div class="top-bar-inner">
+                <div class="top-bar-left">
+                    <a href="mailto:info@yathritours.com"><i class="fas fa-envelope"></i> info@yathritours.com</a>
+                    <a href="tel:+94771234567"><i class="fas fa-phone"></i> +94 77 123 4567</a>
+                </div>
+                <div class="top-bar-right">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <a href="#" class="btn-book">Yathri Tours</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/logo.svg" alt="Yathri Tours" class="logo-white" style="height: 60px;">
+                    <img src="assets/img/logo.svg" alt="Yathri Tours" class="logo-dark" style="height: 60px;">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="destination.html">DESTINATIONS</a></li>
+                    <li><a href="tours.html" class="active">TOURS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+                <a href="#" class="menu-toggle"><i class="fas fa-bars"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="tour-hero">
+        <div class="tour-hero-content">
+            <h1>Crafting Your Travel Tale</h1>
+            <p>Embark on Tailored Adventures</p>
+        </div>
+    </section>
+
+    <!-- Filters & Intro Section -->
+    <section class="tour-filters">
+        <div class="container">
+            <div class="breadcrumb-small"><span>HOME</span> / TOURS</div>
+            <span class="filter-subtitle">Customize your vacation with us</span>
+            <h2 class="filter-title">Find your journey</h2>
+            <h3 class="filter-desc">Adventure Meets Luxury in Every Destination</h3>
+            <p class="filter-paragraph">
+                Yathri Tours offers solid adventure, romantic escapes, and fine local touch with expert guides. Whether
+                you explore our mountain tours, beaches or culture, there is so much to see and do in Sri Lanka. Tours
+                to suit your specific interests and duration of stay can be tailor-made too.
+            </p>
+
+            <div class="filter-controls">
+                <select class="filter-select">
+                    <option selected>Sri Lanka Tour Experiences</option>
+                    <option>Adventure</option>
+                    <option>Cultural</option>
+                    <option>Nature</option>
+                </select>
+                <select class="filter-select">
+                    <option selected>Duration</option>
+                    <option>1-3 Days</option>
+                    <option>4-7 Days</option>
+                    <option>8-14 Days</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Grid -->
+    <section class="tour-grid">
+        <div class="container">
+            <div class="row">
+                <!-- Tour 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card-custom">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1546708973-b339540b5162?q=80&w=1000"
+                                alt="Courtyards">
+                            <div class="tour-badge">Authentic Ceylon</div>
+                        </div>
+                        <div class="tour-content-custom">
+                            <h3 class="tour-title-custom">Courtyards & Verandahs</h3>
+                            <p class="tour-desc-custom">Full of historical resonances, these Geffory Bawa creations are
+                                more relevant now than ever.</p>
+                            <a href="#" class="tour-learn-more">Learn more ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card-custom">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1000"
+                                alt="Cycling">
+                            <div class="tour-badge">Adrenaline Spirit</div>
+                        </div>
+                        <div class="tour-content-custom">
+                            <h3 class="tour-title-custom">Cycling in Sri Lanka Tour</h3>
+                            <p class="tour-desc-custom">Sreams, forests, mountains of Hill country hills and national
+                                parks.</p>
+                            <a href="#" class="tour-learn-more">Learn more ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card-custom">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?q=80&w=1000"
+                                alt="Summer">
+                            <div class="tour-badge">Authentic Ceylon</div>
+                        </div>
+                        <div class="tour-content-custom">
+                            <h3 class="tour-title-custom">Everlasting Summer in Lanka</h3>
+                            <p class="tour-desc-custom">Pristine white sandy beaches, crystal water and sunshine.</p>
+                            <a href="#" class="tour-learn-more">Learn more ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card-custom">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1502602732142-3e5a74ef6b9c?q=80&w=1000"
+                                alt="East">
+                            <div class="tour-badge">Authentic Ceylon</div>
+                        </div>
+                        <div class="tour-content-custom">
+                            <h3 class="tour-title-custom">Experiential East</h3>
+                            <p class="tour-desc-custom">Embark on a picturesque journey through the heart of the east
+                                coast.</p>
+                            <a href="#" class="tour-learn-more">Learn more ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card-custom">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?q=80&w=1000"
+                                alt="Love">
+                            <div class="tour-badge">Romantic Scapes</div>
+                        </div>
+                        <div class="tour-content-custom">
+                            <h3 class="tour-title-custom">Love Songs of Ceylon</h3>
+                            <p class="tour-desc-custom">Tour tailored for participants who want to enjoy their lives.
+                            </p>
+                            <a href="#" class="tour-learn-more">Learn more ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card-custom">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1545208393-216ea50aa302?q=80&w=1000" alt="Yoga">
+                            <div class="tour-badge">Mind & Body</div>
+                        </div>
+                        <div class="tour-content-custom">
+                            <h3 class="tour-title-custom">Meditation & Yoga</h3>
+                            <p class="tour-desc-custom">Enhance your mindset while also nourishing your soul.</p>
+                            <a href="#" class="tour-learn-more">Learn more ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card-custom">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1529230117712-640ff794f41b?q=80&w=1000"
+                                alt="Scenic">
+                            <div class="tour-badge">Authentic Ceylon</div>
+                        </div>
+                        <div class="tour-content-custom">
+                            <h3 class="tour-title-custom">Scenic Sri Lanka</h3>
+                            <p class="tour-desc-custom">Enjoy a quiet escape on our island from mountains to hills and
+                                lakes.</p>
+                            <a href="#" class="tour-learn-more">Learn more ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card-custom">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1558486075-814ca48f6c58?q=80&w=1000"
+                                alt="Riviera">
+                            <div class="tour-badge">Mind & Body</div>
+                        </div>
+                        <div class="tour-content-custom">
+                            <h3 class="tour-title-custom">Southern Riviera</h3>
+                            <p class="tour-desc-custom">A comprehensive luxury experience, which would allow to explore
+                                truly.</p>
+                            <a href="#" class="tour-learn-more">Learn more ></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="tour-card-custom">
+                        <div class="tour-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1506929662133-570c13a69a29?q=80&w=1000"
+                                alt="Maldives">
+                            <div class="tour-badge">Mind & Body</div>
+                        </div>
+                        <div class="tour-content-custom">
+                            <h3 class="tour-title-custom">Sri Lanka & The Maldives Tour</h3>
+                            <p class="tour-desc-custom">Two destinations in one - each as unique. This is a...</p>
+                            <a href="#" class="tour-learn-more">Learn more ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-custom">
+                <div class="page-btn prev-btn"><i class="fas fa-chevron-left"></i></div>
+                <div class="page-btn active">1</div>
+                <div class="page-btn next-btn"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2 class="news-title">Subscribe to our Newsletter</h2>
+            <p class="news-subtitle">For the latest updates and special offers</p>
+            <form class="news-form">
+                <input type="email" class="news-input" placeholder="Your Email">
+                <button type="submit" class="news-submit">Submit ></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="footer-area footer-layout1" style="background-color: #000; color: #fff; padding-top: 80px;">
+        <div class="container custom-pad">
+            <div class="row justify-content-between">
+                <div class="col-md-6 col-xl-3">
+                    <div class="footer-widget">
+                        <div class="footer-logo mb-4">
+                            <img src="assets/img/logo.svg" alt="Yathri Tours"
+                                style="height: 60px; filter: brightness(0) invert(1);">
+                        </div>
+                        <p class="footer-text mb-4" style="color: #aaa; font-size: 0.9rem;">
+                            Yathri Tours is a premier travel agency in Sri Lanka, offering bespoke tours and
+                            unforgettable experiences in the teardrop island of the Indian Ocean.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
+                            <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                            <a href="#" style="color: #fff;"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-2">
+                    <div class="footer-widget">
+                        <h3 class="widget-title mb-4" style="font-size: 1.2rem; font-weight: 600;">COMPANY</h3>
+                        <ul class="footer-links list-unstyled" style="font-size: 0.9rem;">
+                            <li class="mb-2"><a href="index.html" style="color: #aaa; text-decoration: none;">Home</a>
+                            </li>
+                            <li class="mb-2"><a href="about.html" style="color: #aaa; text-decoration: none;">About
+                                    Us</a></li>
+                            <li class="mb-2"><a href="destination.html"
+                                    style="color: #aaa; text-decoration: none;">Destinations</a></li>
+                            <li class="mb-2"><a href="tours.html" style="color: #aaa; text-decoration: none;">Tours</a>
+                            </li>
+                            <li class="mb-2"><a href="contact.html" style="color: #aaa; text-decoration: none;">Contact
+                                    Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="footer-widget">
+                        <h3 class="widget-title mb-4" style="font-size: 1.2rem; font-weight: 600;">ADVANCE TOURS</h3>
+                        <ul class="footer-links list-unstyled" style="font-size: 0.9rem;">
+                            <li class="mb-2"><a href="#" style="color: #aaa; text-decoration: none;">Authentic
+                                    Ceylon</a></li>
+                            <li class="mb-2"><a href="#" style="color: #aaa; text-decoration: none;">Adrenaline
+                                    Spirit</a></li>
+                            <li class="mb-2"><a href="#" style="color: #aaa; text-decoration: none;">Mind & Body</a>
+                            </li>
+                            <li class="mb-2"><a href="#" style="color: #aaa; text-decoration: none;">Romantic Scapes</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <div class="footer-widget">
+                        <h3 class="widget-title mb-4" style="font-size: 1.2rem; font-weight: 600;">CONTACT</h3>
+                        <div class="footer-contact" style="color: #aaa; font-size: 0.9rem;">
+                            <p class="mb-2"><i class="fas fa-phone-alt me-2"></i> +94 77 123 4567</p>
+                            <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@yathritours.com</p>
+                            <p><i class="fas fa-map-marker-alt me-2"></i> 123 Galle Road, Colombo 03, Sri Lanka</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12 text-center">
+                            <div class="partner-logos mb-3">
+                                <span
+                                    style="display: block; font-size: 0.8rem; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">PARTNERS</span>
+                                <img src="assets/img/brand/brand_1_1.svg" alt="logo"
+                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
+                                <img src="assets/img/brand/brand_1_2.svg" alt="logo"
+                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
+                                <img src="assets/img/brand/brand_1_3.svg" alt="logo"
+                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
+                                <img src="assets/img/brand/brand_1_4.svg" alt="logo"
+                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
+                                <img src="assets/img/brand/brand_1_5.svg" alt="logo"
+                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
+                            </div>
+                            <p class="copyright mb-0" style="font-size: 0.8rem; color: #666;">
+                                &copy; 2026 Yathri Tours. All Rights Reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
