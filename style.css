@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Futura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300..700&display=swap');
 
 :root {
     --primary-pink: #e80b5b;
@@ -19,7 +19,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html,
@@ -40,11 +40,18 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.container {
-    padding: 80px 5%;
+/* Custom spacing for themed sections */
+.custom-pad {
+    padding: 80px 5% !important;
+}
+
+.spacer-y,
+.space {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
 }
 
 .top-title {
@@ -52,7 +59,7 @@ h6 {
     letter-spacing: 3px;
     font-weight: 600;
     font-size: 0.9rem;
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     display: block;
     margin-bottom: 10px;
@@ -209,6 +216,11 @@ h6 {
     /* Wider like screenshot */
     max-width: 1600px;
     margin: 0 auto;
+}
+
+/* Flex only for header/top-bar instances to avoid body content side-by-side corruption */
+.main-header .header-container,
+.top-bar-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -216,7 +228,7 @@ h6 {
 
 .logo a {
     text-decoration: none;
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
     color: var(--accent-yellow);
     font-weight: 600;
@@ -454,7 +466,7 @@ h6 {
 }
 
 .main-heading {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--white);
     font-size: clamp(3.5rem, 7vw, 6rem);
     line-height: 1.1;
@@ -595,7 +607,7 @@ h6 {
 }
 
 .hero-location-info h3 {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 8px;
@@ -762,7 +774,7 @@ h6 {
 }
 
 .feature-item h4 {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--dark-blue);
     font-size: 1.1rem;
     font-weight: 600;
@@ -876,7 +888,7 @@ h6 {
 }
 
 .badge-num {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--dark-blue);
@@ -984,7 +996,7 @@ h6 {
 }
 
 .banner-content p {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -1010,7 +1022,7 @@ h6 {
 }
 
 .journey-subtitle {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
     color: var(--text-dark);
 }
@@ -1086,7 +1098,7 @@ h6 {
 }
 
 .journey-category h4 {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.4rem;
     color: var(--dark-blue);
     line-height: 1.1;
@@ -1213,7 +1225,7 @@ h6 {
 }
 
 .loc-item h4 {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--dark-blue);
     font-size: 1.1rem;
     font-weight: 600;
@@ -1284,7 +1296,7 @@ h6 {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--secondary-cyan);
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     display: inline-block;
     margin-bottom: 5px;
@@ -1732,7 +1744,7 @@ h6 {
 }
 
 .reviewer-info h4 {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--dark-blue);
     font-size: 1.1rem;
     margin-bottom: 2px;
@@ -1755,7 +1767,7 @@ h6 {
     background: #04111a;
     color: #fff;
     padding: 80px 10% 20px;
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Newsletter Top */
@@ -1765,7 +1777,7 @@ h6 {
 }
 
 .newsletter-title {
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.2rem;
     font-weight: 500;
     margin-bottom: 15px;
@@ -1804,7 +1816,7 @@ h6 {
     outline: none;
     font-size: 1rem;
     color: var(--primary-pink);
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .input-wrapper input::placeholder {
@@ -1958,7 +1970,7 @@ h6 {
     text-decoration: none;
     color: var(--accent-yellow);
     font-size: 1.4rem;
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Partners Bottom */
@@ -2637,7 +2649,7 @@ h6 {
     color: var(--dark-blue);
     margin-top: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    font-family: 'Futura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     white-space: nowrap;
 }
 

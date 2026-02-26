@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations | Yathri Tours</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Template Styles -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/destination-slider.css">
+
+    <style>
+        .dest-hero {
+            height: 60vh;
+            min-height: 450px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            color: white;
+            margin-top: 0;
+        }
+
+        .dest-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        .dest-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .dest-hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff !important;
+        }
+
+        .dest-hero p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff !important;
+        }
+
+        .dest-breadcumb {
+            background: #fff;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 0;
+        }
+
+        .dest-breadcumb ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .dest-breadcumb ul li a {
+            color: var(--primary-pink);
+            text-decoration: none;
+        }
+
+        .dest-breadcumb ul li::after {
+            content: '>';
+            margin-left: 10px;
+        }
+
+        .dest-breadcumb ul li:last-child::after {
+            content: '';
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-intro h2 {
+            font-size: 3rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Destination Grid Pagination */
+        .dest-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 60px;
+        }
+
+        .page-num {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .page-num.active,
+        .page-num:hover {
+            background: var(--primary-pink);
+            color: white;
+            border-color: var(--primary-pink);
+        }
+
+        .page-arrow {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--accent-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--dark-blue);
+            transition: all 0.3s;
+        }
+
+        .page-arrow:hover {
+            background: var(--primary-pink);
+            color: white;
+        }
+
+        .all-packages-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .all-packages-link a {
+            color: var(--accent-yellow);
+            text-decoration: underline;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 992px) {
+            .dest-hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-intro h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="header-container top-bar-inner">
+            <div class="top-contacts">
+                <span class="email">Email: <a
+                        href="mailto:inquiries@yathritours.com">inquiries@yathritours.com</a></span>
+                <span class="divider">|</span>
+                <span class="phone"><i class="fas fa-phone-alt"></i> Call Us</span>
+            </div>
+            <button class="video-chat-btn"><i class="fas fa-video"></i> Video Chat</button>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">YATHRI<span>TOURS</span><br><small>SRI LANKA</small></a>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="mobile-menu-close"><i class="fas fa-times"></i></div>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT US +</a></li>
+                    <li><a href="destination.html" class="active">DESTINATIONS</a></li>
+                    <li><a href="#">EXPERIENCES</a></li>
+                    <li><a href="#">TOURS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#" class="icon-btn"><i class="fas fa-home"></i></a>
+                <a href="#" class="icon-btn"><i class="fas fa-search"></i></a>
+                <div class="menu-btn-wrap">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-text">MENU</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="dest-hero" style="background-image: url('assets/img/destination/destination-details.jpg');">
+        <div class="dest-hero-content">
+            <h1>An Island Of Wonder</h1>
+            <p>Come Explore With Us</p>
+        </div>
+    </section>
+
+
+    <section class="space-bottom space-top">
+        <div class="header-container">
+            <div class="section-intro">
+                <span class="sub-title"><i class="fas fa-circle"></i> Active travel could change your life</span>
+                <h2 style="font-family: 'Montserrat', sans-serif;">Diverse Destinations</h2>
+                <h3 style="font-family: 'Montserrat', sans-serif;">Your "Must-See" Places</h3>
+                <p>With so many places to visit, Sri Lanka is a bit of paradise full of surprising proximity. You can
+                    swap the bustle of a city for a tranquil beach in an hour or two, or switch from tropical heat to
+                    cool heights and cloud forests in a few lines. There are mountains to climb, waves to surf, history
+                    to explore, even elephants to meet.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Anuradhapura -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card2">
+                        <div class="pkg-img-wrap">
+                            <img src="assets/img/destination/destination_15_1.jpg" alt="Anuradhapura">
+                            <div class="pkg-overlay"></div>
+                        </div>
+                        <div class="pkg-content">
+                            <div class="pkg-duration">Cultural Heritage</div>
+                            <h3 class="pkg-title">Anuradhapura</h3>
+                            <div class="pkg-subtitle"><span class="pkg-icon"></span> Ancient Capital</div>
+                            <p class="pkg-desc">The first ancient Sinhalese historical capital world-renowned for its
+                                pithy history and monuments.</p>
+                            <div class="pkg-brand">Destinations</div>
+                            <a href="#" class="pkg-view-btn">Read More <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arugam Bay -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card2">
+                        <div class="pkg-img-wrap">
+                            <img src="assets/img/destination/destination_15_2.jpg" alt="Arugam Bay">
+                            <div class="pkg-overlay"></div>
+                        </div>
+                        <div class="pkg-content">
+                            <div class="pkg-duration">Surf Paradise</div>
+                            <h3 class="pkg-title">Arugam Bay</h3>
+                            <div class="pkg-subtitle"><span class="pkg-icon"></span> East Coast</div>
+                            <p class="pkg-desc">World famous surf spot – East Point home to the ultimate waves of the
+                                surfers soul.</p>
+                            <div class="pkg-brand">Destinations</div>
+                            <a href="#" class="pkg-view-btn">Read More <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bentota -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card2">
+                        <div class="pkg-img-wrap">
+                            <img src="assets/img/destination/destination_15_3.jpg" alt="Bentota">
+                            <div class="pkg-overlay"></div>
+                        </div>
+                        <div class="pkg-content">
+                            <div class="pkg-duration">Beach & Sun</div>
+                            <h3 class="pkg-title">Bentota</h3>
+                            <div class="pkg-subtitle"><span class="pkg-icon"></span> Coastal Haven</div>
+                            <p class="pkg-desc">This central coastal destination is renowned for its heart-warm sunlit
+                                coastlines and water sports.</p>
+                            <div class="pkg-brand">Destinations</div>
+                            <a href="#" class="pkg-view-btn">Read More <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colombo -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card2">
+                        <div class="pkg-img-wrap">
+                            <img src="assets/img/destination/destination_15_4.jpg" alt="Colombo">
+                            <div class="pkg-overlay"></div>
+                        </div>
+                        <div class="pkg-content">
+                            <div class="pkg-duration">City Life</div>
+                            <h3 class="pkg-title">Colombo</h3>
+                            <div class="pkg-subtitle"><span class="pkg-icon"></span> Commercial Capital</div>
+                            <p class="pkg-desc">A vibrant city that nicely blends with modern lifestyle and old history,
+                                offering endless discovery.</p>
+                            <div class="pkg-brand">Destinations</div>
+                            <a href="#" class="pkg-view-btn">Read More <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dambulla -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card2">
+                        <div class="pkg-img-wrap">
+                            <img src="assets/img/destination/destination_15_5.jpg" alt="Dambulla">
+                            <div class="pkg-overlay"></div>
+                        </div>
+                        <div class="pkg-content">
+                            <div class="pkg-duration">Spiritual Journey</div>
+                            <h3 class="pkg-title">Dambulla</h3>
+                            <div class="pkg-subtitle"><span class="pkg-icon"></span> Rock Temple</div>
+                            <p class="pkg-desc">Home to the iconic Rock Monastery of Dambulla, a site of spiritual
+                                allure and ancient cave paintings.</p>
+                            <div class="pkg-brand">Destinations</div>
+                            <a href="#" class="pkg-view-btn">Read More <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ella -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card2">
+                        <div class="pkg-img-wrap">
+                            <img src="assets/img/destination/destination_14_1.jpg" alt="Ella">
+                            <div class="pkg-overlay"></div>
+                        </div>
+                        <div class="pkg-content">
+                            <div class="pkg-duration">Highlands</div>
+                            <h3 class="pkg-title">Ella</h3>
+                            <div class="pkg-subtitle"><span class="pkg-icon"></span> Mountain Views</div>
+                            <p class="pkg-desc">Mist-shrouded, hidden away cool highlands with spectacular views over
+                                the green hills.</p>
+                            <div class="pkg-brand">Destinations</div>
+                            <a href="#" class="pkg-view-btn">Read More <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galle -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card2">
+                        <div class="pkg-img-wrap">
+                            <img src="assets/img/destination/destination_14_2.jpg" alt="Galle">
+                            <div class="pkg-overlay"></div>
+                        </div>
+                        <div class="pkg-content">
+                            <div class="pkg-duration">Colonial History</div>
+                            <h3 class="pkg-title">Galle</h3>
+                            <div class="pkg-subtitle"><span class="pkg-icon"></span> Historic Fort</div>
+                            <p class="pkg-desc">Visit the historic colonial dutch architecture city famous for its Dutch
+                                Fort and cobblestone streets.</p>
+                            <div class="pkg-brand">Destinations</div>
+                            <a href="#" class="pkg-view-btn">Read More <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Habarana -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card2">
+                        <div class="pkg-img-wrap">
+                            <img src="assets/img/destination/destination_14_3.jpg" alt="Habarana">
+                            <div class="pkg-overlay"></div>
+                        </div>
+                        <div class="pkg-content">
+                            <div class="pkg-duration">Nature & Wildlife</div>
+                            <h3 class="pkg-title">Habarana</h3>
+                            <div class="pkg-subtitle"><span class="pkg-icon"></span> Central Pathway</div>
+                            <p class="pkg-desc">Strategically placed on the pathway to the North and East, hub for
+                                wildlife safaris.</p>
+                            <div class="pkg-brand">Destinations</div>
+                            <a href="#" class="pkg-view-btn">Read More <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hatton -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card2">
+                        <div class="pkg-img-wrap">
+                            <img src="assets/img/destination/destination_14_4.jpg" alt="Hatton">
+                            <div class="pkg-overlay"></div>
+                        </div>
+                        <div class="pkg-content">
+                            <div class="pkg-duration">Tea Country</div>
+                            <h3 class="pkg-title">Hatton</h3>
+                            <div class="pkg-subtitle"><span class="pkg-icon"></span> Lush Hills</div>
+                            <p class="pkg-desc">The major tea hub of Sri Lanka, the hills are lush and green here all
+                                year around and cool breeze.</p>
+                            <div class="pkg-brand">Destinations</div>
+                            <a href="#" class="pkg-view-btn">Read More <i class="fas fa-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dest-pagination">
+                <a href="#" class="page-num active">1</a>
+                <a href="#" class="page-num">2</a>
+                <a href="#" class="page-num">3</a>
+                <a href="#" class="page-num">4</a>
+                <a href="#" class="page-arrow"><i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="all-packages-link">
+                <a href="#">View All Sri Lanka Tour Packages &raquo;</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-top-newsletter">
+            <h2 class="newsletter-title">Subscribe to our Newsletter</h2>
+            <p class="newsletter-subtitle">For the latest updates and special offers.</p>
+            <div class="newsletter-form-container">
+                <div class="input-wrapper">
+                    <input type="email" placeholder="Your Email">
+                </div>
+                <button type="button" class="submit-btn">SUBMIT &nbsp; <i class="fas fa-play"
+                        style="font-size:0.7em;"></i></button>
+            </div>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="destination.html">Destinations</a></li>
+                    <li><a href="#">Experiences</a></li>
+                    <li><a href="#">Tours</a></li>
+                    <li><a href="#">Events Calendar</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+                <h4 style="margin-top: 30px;">Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">E - Brochure</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Yathri Family</h4>
+                <ul>
+                    <li><a href="#">Yathri Hotels</a></li>
+                    <li><a href="#">Sri Lanka Tailor-Made</a></li>
+                    <li><a href="#">Yathri Journeys</a></li>
+                    <li><a href="#">Yathri Eco Holidays</a></li>
+                    <li><a href="#">Yathri Events</a></li>
+                    <li><a href="#">Yathri Air</a></li>
+                    <li><a href="#">Yathri Adventures</a></li>
+                    <li><a href="#">Yathri Leisure Maldives</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Tour</h4>
+                <ul>
+                    <li><a href="#">Authentic Ceylon</a></li>
+                    <li><a href="#">Plan Your Trip</a></li>
+                    <li><a href="#">Adventurous Spirit</a></li>
+                    <li><a href="#">Barefoot Luxury</a></li>
+                    <li><a href="#">Following the Wild</a></li>
+                    <li><a href="#">Romantic Serendipity</a></li>
+                    <li><a href="#">Island of Wellness</a></li>
+                    <li><a href="#">Join a Group</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col hotline-col">
+                <h4>Hotline</h4>
+                <div class="hotline-number">
+                    <i class="far fa-clock"
+                        style="color:var(--accent-yellow); font-size:1.5em; margin-right: 15px;"></i>
+                    <span style="font-size:1.8em; font-weight:300; letter-spacing:1px; color:var(--white);">+94 77 726
+                        5746</span>
+                </div>
+                <p class="small-info">(24/7) Only for international inquiries</p>
+
+                <div class="company-details">
+                    <p><strong>Yathri Travels (Private) Ltd</strong><br>
+                        46/26, Navam Mawatha,<br>
+                        Colombo 02,<br>
+                        SRI LANKA.</p>
+
+                    <p style="margin-top: 15px;">General:</p>
+                    <p>E-mail: <a href="mailto:inquiries@yathritours.com">inquiries@yathritours.com</a></p>
+
+                    <p style="margin-top: 15px;">Opening Hours</p>
+                    <p>Mon - Fri: 9 am to 5 pm</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-connected">
+            <div class="socials-wrap">
+                <h4>Stay Connected:</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <a href="#">Yathri <span
+                        style="color:var(--primary-pink); font-weight:600; text-transform:uppercase; font-size:1rem; letter-spacing: 2px;">TRAVELS</span><br><small
+                        style="color:var(--accent-yellow); font-size:0.6rem; letter-spacing: 2px;">SRI LANKA</small></a>
+            </div>
+        </div>
+
+        <div class="footer-partners">
+            <div class="container th-container">
+                <h4
+                    style="text-align: center; color: var(--dark-blue); margin-bottom: 30px; font-weight: 700; letter-spacing: 2px;">
+                    PARTNERS</h4>
+                <div class="swiper th-slider brandSlider1 footer-brand-slider" id="brandSlider1"
+                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"6"},"1400":{"slidesPerView":"8"}}}'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_1.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_1.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_2.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_2.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_3.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_3.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_4.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_4.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_5.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_5.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_6.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_6.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_7.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_7.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_8.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_8.svg" alt="Brand Logo"></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2026 &copy; All Rights Reserved | Yathri Tours | Designed and Developed by Silicon Radon Networks (Pvt)
+                Ltd</p>
+        </div>
+    </footer>
+
+    <div class="scroll-top">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+
+    <!-- Template Scripts -->
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/circle-progress.js"></script>
+    <script src="assets/js/matter.min.js"></script>
+    <script src="assets/js/matterjs-custom.js"></script>
+    <script src="assets/js/nice-select.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

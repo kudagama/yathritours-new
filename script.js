@@ -158,10 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Destination Slider 10
+    // Our Journey Slider (Manual Initialization for Autoplay fix)
     new Swiper('#destinationSlider10', {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 30,
         loop: true,
         speed: 1000,
         autoplay: {
@@ -170,24 +170,15 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         navigation: {
             nextEl: '[data-slider-next="#destinationSlider10"]',
-            prevEl: '[data-slider-prev="#destinationSlider10"]',
+            prevEl: '[data-slider-prev="#slider-prev"]'
         },
         breakpoints: {
-            576: {
-                slidesPerView: 1,
-            },
-            768: {
-                slidesPerView: 2,
-            },
-            992: {
-                slidesPerView: 2,
-            },
-            1200: {
-                slidesPerView: 4,
-            },
-            1300: {
-                slidesPerView: 5,
-            }
+            576: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            992: { slidesPerView: 3 },
+            1200: { slidesPerView: 4 },
+            1400: { slidesPerView: 5 }
         }
     });
+
 });
