@@ -1,0 +1,155 @@
+/* Destination Slider Styles Extracted from Theme */
+
+.destination-item4 {
+    position: relative;
+    z-index: 2;
+}
+
+.destination-item4.style2 .destination-item4_img {
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.destination-item4.style2 .destination-item4_img img {
+    border-radius: 24px;
+    transition: transform 0.6s ease;
+}
+
+.destination-item4:hover .destination-item4_img img {
+    transform: scale(1.1);
+}
+
+.destination-item4 .destination-content {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 8px 18px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+.destination-item4 .destination-content .box-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: #113D48;
+}
+
+.destination-item4 .destination-content .box-title a {
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.destination-item4 .destination-content .box-title img {
+    width: 14px;
+}
+
+/* Specific offsets for the cascading effect in the slider */
+.destinationSlider10 .swiper-slide:nth-child(even) .destination-item4 {
+    margin-top: 60px;
+}
+
+/* Animations and Shadows */
+.has-shadow {
+    padding-bottom: 50px;
+}
+
+.th-ani {
+    transition: all 500ms ease;
+}
+
+.th-ani:hover {
+    transform: translateY(-5px);
+}
+
+/* Slider Arrows */
+.slider-arrow.style6 {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    border: 1px solid #E1E4E5;
+    background: #ffffff;
+    border-radius: 50%;
+    color: #1CA8CB;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.slider-arrow.style6:hover {
+    background: #1CA8CB;
+    border-color: #1CA8CB;
+}
+
+.slider-arrow.style6:hover img {
+    filter: brightness(0) invert(1);
+}
+
+/* Shape Mockups */
+.shape-mockup {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@media (max-width: 1300px) {
+    .shape-mockup {
+        display: none !important;
+    }
+}
+
+.movingX {
+    animation: movingX 8s linear infinite;
+}
+
+@keyframes movingX {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(50px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.jump {
+    animation: jumpAni 7s linear infinite;
+}
+
+@keyframes jumpAni {
+    0% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.spin {
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

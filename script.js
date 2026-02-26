@@ -157,4 +157,37 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // Destination Slider 10
+    new Swiper('#destinationSlider10', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        speed: 1000,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '[data-slider-next="#destinationSlider10"]',
+            prevEl: '[data-slider-prev="#destinationSlider10"]',
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 2,
+            },
+            1200: {
+                slidesPerView: 4,
+            },
+            1300: {
+                slidesPerView: 5,
+            }
+        }
+    });
 });
