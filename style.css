@@ -3686,8 +3686,10 @@ textarea.bg-input {
 }
 
 @media (max-width: 768px) {
-    .contact-page .page-hero {
-        height: 50vh;
+
+    .contact-page .page-hero,
+    .about-page .page-hero {
+        height: 50vh !important;
         min-height: 400px;
     }
 
@@ -3697,7 +3699,9 @@ textarea.bg-input {
         margin-top: 30px;
     }
 
-    .contact-page .hero-center-content {
+    .contact-page .hero-center-content,
+    .about-page .hero-center-content,
+    .page-hero .hero-center-content {
         margin-top: 80px;
         padding: 0 15px;
         width: 100%;
@@ -3720,13 +3724,19 @@ textarea.bg-input {
         --bs-gutter-y: 1.25rem !important;
     }
 
-    .contact-form-side .mb-5 {
+    .contact-form-side .mb-5,
+    .about-page .mb-5,
+    .mb-5 {
         margin-bottom: 1.5rem !important;
     }
 
-    .contact-page .spacer-y {
-        padding-top: 40px !important;
-        padding-bottom: 60px !important;
+    .contact-page .spacer-y,
+    .about-page .spacer-y,
+    .spacer-y,
+    .space,
+    .custom-pad {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
     }
 
     .contact-card-premium {
