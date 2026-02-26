@@ -33,8 +33,8 @@
 
         /* Hero Section */
         .tour-hero {
-            height: 70vh;
-            min-height: 500px;
+            height: 60vh;
+            min-height: 450px;
             background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000');
             background-size: cover;
             background-position: center;
@@ -53,7 +53,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
         }
 
         .tour-hero-content {
@@ -62,18 +62,20 @@
         }
 
         .tour-hero h1 {
-            font-size: 4.5rem;
-            font-weight: 500;
-            margin-bottom: 15px;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
             font-family: 'Montserrat', sans-serif;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            color: #ffffff !important;
         }
 
         .tour-hero p {
-            font-size: 1.2rem;
-            font-weight: 300;
+            font-size: 1.5rem;
+            font-weight: 400;
             letter-spacing: 2px;
-            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff !important;
         }
 
         /* Filter Section */
@@ -140,11 +142,19 @@
             border-radius: 4px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             transition: transform 0.3s ease;
             height: 100%;
             border: 1px solid #eee;
         }
+
+        .tour-grid .row {
+            --bs-gutter-x: 3.5rem;
+            /* Large horizontal gap */
+            --bs-gutter-y: 2.5rem;
+            /* Large vertical gap */
+        }
+
 
         .tour-card-custom:hover {
             transform: translateY(-5px);
@@ -333,21 +343,14 @@
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="header-container">
-            <div class="top-bar-inner">
-                <div class="top-bar-left">
-                    <a href="mailto:info@yathritours.com"><i class="fas fa-envelope"></i> info@yathritours.com</a>
-                    <a href="tel:+94771234567"><i class="fas fa-phone"></i> +94 77 123 4567</a>
-                </div>
-                <div class="top-bar-right">
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                    <a href="#" class="btn-book">Yathri Tours</a>
-                </div>
+        <div class="header-container top-bar-inner">
+            <div class="top-contacts">
+                <span class="email">Email: <a
+                        href="mailto:inquiries@yathritours.com">inquiries@yathritours.com</a></span>
+                <span class="divider">|</span>
+                <span class="phone"><i class="fas fa-phone-alt"></i> Call Us</span>
             </div>
+            <button class="video-chat-btn"><i class="fas fa-video"></i> Video Chat</button>
         </div>
     </div>
 
@@ -355,12 +358,11 @@
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
-                <a href="index.html">
-                    <img src="assets/img/logo.svg" alt="Yathri Tours" class="logo-white" style="height: 60px;">
-                    <img src="assets/img/logo.svg" alt="Yathri Tours" class="logo-dark" style="height: 60px;">
-                </a>
+                <a href="index.html">YATHRI<span>TOURS</span><br><small>SRI LANKA</small></a>
             </div>
+
             <nav class="nav-menu">
+                <div class="mobile-menu-close"><i class="fas fa-times"></i></div>
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="about.html">ABOUT US</a></li>
@@ -369,15 +371,23 @@
                     <li><a href="contact.html">CONTACT US</a></li>
                 </ul>
             </nav>
+
             <div class="header-actions">
-                <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
-                <a href="#" class="menu-toggle"><i class="fas fa-bars"></i></a>
+                <a href="index.html" class="icon-btn"><i class="fas fa-home"></i></a>
+                <a href="#" class="icon-btn"><i class="fas fa-search"></i></a>
+                <div class="menu-btn-wrap">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-text">MENU</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="tour-hero">
+    <section class="tour-hero" style="background-image: url('nine-arche.jpg');">
         <div class="tour-hero-content">
             <h1>Crafting Your Travel Tale</h1>
             <p>Embark on Tailored Adventures</p>
@@ -387,7 +397,7 @@
     <!-- Filters & Intro Section -->
     <section class="tour-filters">
         <div class="container">
-            <div class="breadcrumb-small"><span>HOME</span> / TOURS</div>
+
             <span class="filter-subtitle">Customize your vacation with us</span>
             <h2 class="filter-title">Find your journey</h2>
             <h3 class="filter-desc">Adventure Meets Luxury in Every Destination</h3>
@@ -397,27 +407,13 @@
                 to suit your specific interests and duration of stay can be tailor-made too.
             </p>
 
-            <div class="filter-controls">
-                <select class="filter-select">
-                    <option selected>Sri Lanka Tour Experiences</option>
-                    <option>Adventure</option>
-                    <option>Cultural</option>
-                    <option>Nature</option>
-                </select>
-                <select class="filter-select">
-                    <option selected>Duration</option>
-                    <option>1-3 Days</option>
-                    <option>4-7 Days</option>
-                    <option>8-14 Days</option>
-                </select>
-            </div>
         </div>
     </section>
 
     <!-- Tour Grid -->
     <section class="tour-grid">
         <div class="container">
-            <div class="row">
+            <div class="row g-4">
                 <!-- Tour 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="tour-card-custom">
@@ -577,116 +573,211 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <h2 class="news-title">Subscribe to our Newsletter</h2>
-            <p class="news-subtitle">For the latest updates and special offers</p>
-            <form class="news-form">
-                <input type="email" class="news-input" placeholder="Your Email">
-                <button type="submit" class="news-submit">Submit ></button>
-            </form>
+    <footer class="main-footer">
+        <div class="footer-top-newsletter">
+            <h2 class="newsletter-title">Subscribe to our Newsletter</h2>
+            <p class="newsletter-subtitle">For the latest updates and special offers.</p>
+            <div class="newsletter-form-container">
+                <div class="input-wrapper">
+
+                    <input type="email" placeholder="Your Email">
+                </div>
+                <button type="button" class="submit-btn">SUBMIT &nbsp; <i class="fas fa-play"
+                        style="font-size:0.7em;"></i></button>
+            </div>
         </div>
-    </section>
 
-    <!-- Footer Area -->
-    <footer class="footer-area footer-layout1" style="background-color: #000; color: #fff; padding-top: 80px;">
-        <div class="container custom-pad">
-            <div class="row justify-content-between">
-                <div class="col-md-6 col-xl-3">
-                    <div class="footer-widget">
-                        <div class="footer-logo mb-4">
-                            <img src="assets/img/logo.svg" alt="Yathri Tours"
-                                style="height: 60px; filter: brightness(0) invert(1);">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Experiences</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="#">Events Calendar</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+                <h4 style="margin-top: 30px;">Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">E - Brochure</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Yathri Family</h4>
+                <ul>
+                    <li><a href="#">Yathri Hotels</a></li>
+                    <li><a href="#">Sri Lanka Tailor-Made</a></li>
+                    <li><a href="#">Yathri Journeys</a></li>
+                    <li><a href="#">Yathri Eco Holidays</a></li>
+                    <li><a href="#">Yathri Events</a></li>
+                    <li><a href="#">Yathri Air</a></li>
+                    <li><a href="#">Yathri Adventures</a></li>
+                    <li><a href="#">Yathri Leisure Maldives</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Tour</h4>
+                <ul>
+                    <li><a href="#">Authentic Ceylon</a></li>
+                    <li><a href="#">Plan Your Trip</a></li>
+                    <li><a href="#">Adventurous Spirit</a></li>
+                    <li><a href="#">Barefoot Luxury</a></li>
+                    <li><a href="#">Following the Wild</a></li>
+                    <li><a href="#">Romantic Serendipity</a></li>
+                    <li><a href="#">Island of Wellness</a></li>
+                    <li><a href="#">Join a Group</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col hotline-col">
+                <h4>Hotline</h4>
+                <div class="hotline-number">
+                    <i class="far fa-clock"
+                        style="color:var(--accent-yellow); font-size:1.5em; margin-right: 15px;"></i>
+                    <span style="font-size:1.8em; font-weight:300; letter-spacing:1px; color:var(--white);">+94 77 726
+                        5746</span>
+                </div>
+                <p class="small-info">(24/7) Only for international inquiries</p>
+
+                <div class="company-details">
+                    <p><strong>Yathri Travels (Private) Ltd</strong><br>
+                        46/26, Navam Mawatha,<br>
+                        Colombo 02,<br>
+                        SRI LANKA.</p>
+
+                    <p style="margin-top: 15px;">General:</p>
+                    <p>E-mail: <a href="mailto:inquiries@yathritours.com">inquiries@yathritours.com</a></p>
+
+                    <p style="margin-top: 15px;">Opening Hours</p>
+                    <p>Mon - Fri: 9 am to 5 pm</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-connected">
+            <div class="socials-wrap">
+                <h4>Stay Connected:</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <a href="#">Yathri <span
+                        style="color:var(--primary-pink); font-weight:600; text-transform:uppercase; font-size:1rem; letter-spacing: 2px;">TRAVELS</span><br><small
+                        style="color:var(--accent-yellow); font-size:0.6rem; letter-spacing: 2px;">SRI LANKA</small></a>
+            </div>
+        </div>
+
+        <div class="footer-partners">
+            <div class="container th-container">
+                <div class="swiper th-slider brandSlider1 footer-brand-slider" id="brandSlider1"
+                    data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"6"},"1400":{"slidesPerView":"8"}}}'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_1.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_1.svg" alt="Brand Logo"></a></div>
                         </div>
-                        <p class="footer-text mb-4" style="color: #aaa; font-size: 0.9rem;">
-                            Yathri Tours is a premier travel agency in Sri Lanka, offering bespoke tours and
-                            unforgettable experiences in the teardrop island of the Indian Ocean.
-                        </p>
-                        <div class="footer-social">
-                            <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
-                            <a href="#" style="color: #fff; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
-                            <a href="#" style="color: #fff;"><i class="fab fa-whatsapp"></i></a>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_2.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_2.svg" alt="Brand Logo"></a></div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-2">
-                    <div class="footer-widget">
-                        <h3 class="widget-title mb-4" style="font-size: 1.2rem; font-weight: 600;">COMPANY</h3>
-                        <ul class="footer-links list-unstyled" style="font-size: 0.9rem;">
-                            <li class="mb-2"><a href="index.html" style="color: #aaa; text-decoration: none;">Home</a>
-                            </li>
-                            <li class="mb-2"><a href="about.html" style="color: #aaa; text-decoration: none;">About
-                                    Us</a></li>
-                            <li class="mb-2"><a href="destination.html"
-                                    style="color: #aaa; text-decoration: none;">Destinations</a></li>
-                            <li class="mb-2"><a href="tours.html" style="color: #aaa; text-decoration: none;">Tours</a>
-                            </li>
-                            <li class="mb-2"><a href="contact.html" style="color: #aaa; text-decoration: none;">Contact
-                                    Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3">
-                    <div class="footer-widget">
-                        <h3 class="widget-title mb-4" style="font-size: 1.2rem; font-weight: 600;">ADVANCE TOURS</h3>
-                        <ul class="footer-links list-unstyled" style="font-size: 0.9rem;">
-                            <li class="mb-2"><a href="#" style="color: #aaa; text-decoration: none;">Authentic
-                                    Ceylon</a></li>
-                            <li class="mb-2"><a href="#" style="color: #aaa; text-decoration: none;">Adrenaline
-                                    Spirit</a></li>
-                            <li class="mb-2"><a href="#" style="color: #aaa; text-decoration: none;">Mind & Body</a>
-                            </li>
-                            <li class="mb-2"><a href="#" style="color: #aaa; text-decoration: none;">Romantic Scapes</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3">
-                    <div class="footer-widget">
-                        <h3 class="widget-title mb-4" style="font-size: 1.2rem; font-weight: 600;">CONTACT</h3>
-                        <div class="footer-contact" style="color: #aaa; font-size: 0.9rem;">
-                            <p class="mb-2"><i class="fas fa-phone-alt me-2"></i> +94 77 123 4567</p>
-                            <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@yathritours.com</p>
-                            <p><i class="fas fa-map-marker-alt me-2"></i> 123 Galle Road, Colombo 03, Sri Lanka</p>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_3.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_3.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_4.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_4.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_5.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_5.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_6.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_6.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_7.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_7.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_8.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_8.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_4.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_4.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_3.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_3.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_2.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_2.svg" alt="Brand Logo"></a></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-box"><a href="#"><img class="original"
+                                        src="assets/img/brand/brand_1_1.svg" alt="Brand Logo"> <img class="gray"
+                                        src="assets/img/brand/brand_1_1.svg" alt="Brand Logo"></a></div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="footer-bottom mt-5 pt-4 border-top border-secondary">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-12 text-center">
-                            <div class="partner-logos mb-3">
-                                <span
-                                    style="display: block; font-size: 0.8rem; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">PARTNERS</span>
-                                <img src="assets/img/brand/brand_1_1.svg" alt="logo"
-                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
-                                <img src="assets/img/brand/brand_1_2.svg" alt="logo"
-                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
-                                <img src="assets/img/brand/brand_1_3.svg" alt="logo"
-                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
-                                <img src="assets/img/brand/brand_1_4.svg" alt="logo"
-                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
-                                <img src="assets/img/brand/brand_1_5.svg" alt="logo"
-                                    style="height: 40px; margin: 0 15px; filter: grayscale(1) brightness(2);">
-                            </div>
-                            <p class="copyright mb-0" style="font-size: 0.8rem; color: #666;">
-                                &copy; 2026 Yathri Tours. All Rights Reserved.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="footer-bottom">
+            <p>2026 &copy; All Rights Reserved | Yathri Tours | Designed and Developed by Silicon Radon Networks (Pvt)
+                Ltd</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <div class="scroll-top">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!-- Template Scripts -->
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/circle-progress.js"></script>
+    <script src="assets/js/matter.min.js"></script>
+    <script src="assets/js/matterjs-custom.js"></script>
+    <script src="assets/js/nice-select.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
     <script src="script.js"></script>
 </body>
 
